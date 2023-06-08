@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  cidr-kube-system: 192.168.30.6/32
+  cidr-istio-system: 192.168.30.7/32
+kind: ConfigMap
+metadata:
+  name: kubevip
+  namespace: kube-system
