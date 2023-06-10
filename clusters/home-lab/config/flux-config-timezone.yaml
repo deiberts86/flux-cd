@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: flux-config_timezone
+  name: flux-config-timezone
   namespace: flux-system
 data:
   TIMEZONE: America/New_York
