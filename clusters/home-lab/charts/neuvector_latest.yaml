@@ -6,6 +6,6 @@ metadata:
   namespace: flux-system
 spec:
   interval: 15m
-  url: https://github.com/neuvector/neuvector-helm
+  url: https://neuvector.github.io/neuvector-helm/
   ref:
     branch: master
