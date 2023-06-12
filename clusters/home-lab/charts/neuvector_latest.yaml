@@ -1,0 +1,11 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: neuvector-latest
+  namespace: flux-system
+spec:
+  interval: 15m
+  url: https://github.com/neuvector/neuvector-helm
+  ref:
+    branch: master
