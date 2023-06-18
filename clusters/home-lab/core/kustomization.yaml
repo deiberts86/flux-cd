@@ -4,3 +4,4 @@ resources:
  - kube-vip
  - kube-vip-cloud-provider
  - rancher
+ - kube-seal
