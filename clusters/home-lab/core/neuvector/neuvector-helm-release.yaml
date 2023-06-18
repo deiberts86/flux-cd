@@ -9,7 +9,7 @@ spec:
   releaseName: *app
   chart:
     spec:
-      chart: neuvector/core
+      chart: neuvector
       sourceRef:
         kind: HelmRepository
         name: *app
