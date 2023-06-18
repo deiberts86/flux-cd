@@ -1,0 +1,26 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: &app neuvector-core
+  namespace: neuvector
+spec:
+  interval: 15m
+  releaseName: *app
+  chart:
+    spec:
+      chart: neuvector/core
+      sourceRef:
+        kind: HelmRepository
+        name: *app
+        namespace: flux-system
+      interval: 15m
+      version: 2.4.5
+  install:
+    crds: Create
+    remediation:
+      retries: 5 
+  upgrade:
+    crds: CreateReplace
+    remediation:
+      retries: 5
