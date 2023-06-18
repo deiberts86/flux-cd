@@ -5,3 +5,4 @@ resources:
  - kube-vip-cloud-provider
  - rancher
  - kube-seal
+ - cert-manager
