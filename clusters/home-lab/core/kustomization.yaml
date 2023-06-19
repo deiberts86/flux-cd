@@ -4,7 +4,7 @@ resources:
  - cert-manager
  - kube-seal
  - kube-vip
- - kube-vip-cloud-provider/kube-vip-configmap.yaml
- - kube-vip-cloud-provider/kube-vip-provider.yaml
+ - kube-vip-cloud-provider
  - neuvector
  - rancher
+ 
