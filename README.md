@@ -1,7 +1,7 @@
-# flux-cd
+# FluxCD HomeLab
 Home-Lab FluxCD RKE2 Cluster
 
-#My personal FLUX-CD deployment in progress.
+My personal FLUX-CD deployment in progress.
 
 Core Components:
 - Hardened RKE2 nodes on Rocky 9 Linux
@@ -12,7 +12,8 @@ Core Components:
 - NEUVECTOR
 - ISTIO (For Service Mesh and L7 Load Balancer Services)
 - LOCAL-PATH-STORAGE (in progress)
--- Future:
+
+Future:
 - LongHorn
 - Prometheus
 - Use my custom PiHole Container from Docker
