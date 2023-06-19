@@ -4,7 +4,7 @@ Home-Lab FluxCD RKE2 Cluster
 #My personal FLUX-CD deployment in progress.
 
 Core Components:
-- STIG'ed RKE2 nodes on Rocky 9 Linux
+- Hardened RKE2 nodes on Rocky 9 Linux
 - FLUX-CD
 - RANCHER
 - KUBE-VIP
