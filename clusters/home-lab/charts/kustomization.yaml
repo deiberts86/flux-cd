@@ -5,3 +5,4 @@ resources:
   - rancher.yaml
   - neuvector.yaml
   - kube-seal.yaml
+  - authelia.yaml
