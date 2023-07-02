@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: rancher
-      version: 2.7.5-rc4
+      version: 2.7.5
       sourceRef:
         kind: HelmRepository
         name: *app
@@ -26,4 +26,4 @@ spec:
   values:
     namespace: cattle-system 
     hostname: rancher.deiberts.domain
-    rancherImageTag: v2.7.5-rc4
+    rancherImageTag: v2.7.5
