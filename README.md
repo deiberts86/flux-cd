@@ -5,17 +5,18 @@ My personal FLUX-CD deployment in progress.
 
 Core Components:
 - Hardened RKE2 nodes on Rocky 9 Linux
-- FLUX-CD
-- RANCHER
+- FLUX-CD (bootstrapped)
+- RANCHER MCM
 - KUBE-VIP
 - KUBE-VIP-CLOUD-PROVIDER
-- NEUVECTOR
-- ISTIO (For Service Mesh and L7 Load Balancer Services)
-- LOCAL-PATH-STORAGE (in progress)
+- Authelia (in progress)
+- ISTIO Service Mesh
+- LOCAL-PATH-STORAGE
 
 Future:
 - LongHorn
 - Prometheus
-- Use my custom PiHole Container from Docker
+- NEUVECTOR (need more horse power! coming soon.)
+- Use my custom PiHole Statefulset
 
 This readme will be updated in the future.
