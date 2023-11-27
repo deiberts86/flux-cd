@@ -1,7 +1,5 @@
-# FluxCD HomeLab
-Home-Lab FluxCD RKE2 Cluster
-
-My personal FLUX-CD deployment in progress.
+# FluxCD HomeLab Rancher Cluster
+- Home-Lab FluxCD RKE2 Cluster
 
 Core Components:
 - Hardened RKE2 nodes on Rocky 9 Linux
@@ -9,14 +7,10 @@ Core Components:
 - RANCHER MCM
 - KUBE-VIP
 - KUBE-VIP-CLOUD-PROVIDER
-- Authelia (in progress)
-- ISTIO Service Mesh
-- LOCAL-PATH-STORAGE
+- Rancher Local-Path CSI
+- RancherBackups (coming soon)
 
 Future:
-- LongHorn
-- Prometheus
-- NEUVECTOR (need more horse power! coming soon.)
-- Use my custom PiHole Statefulset
+- Use FluxCD to manage downstream Harvester provisioned clusters with this Git Repo.
 
 This readme will be updated in the future.
