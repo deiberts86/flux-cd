@@ -24,6 +24,7 @@ spec:
     remediation:
       retries: 5
   values:
+    replicaCount: 1
     namespace: cattle-system 
     hostname: rancher.deiberts.domain
     rancherImageTag: v2.8.2
