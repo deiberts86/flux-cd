@@ -29,4 +29,4 @@ spec:
     hostname: rancher.deiberts.domain
     rancherImageTag: v2.9.1
     useBundledChart: true
-    agentTLSMode: "strict"
+    agentTLSMode: "system-store"
