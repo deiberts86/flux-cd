@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: rancher
-      version: 2.9.1
+      version: 2.9.2
       sourceRef:
         kind: HelmRepository
         name: *app
@@ -27,6 +27,6 @@ spec:
     replicas: 1
     namespace: cattle-system 
     hostname: rancher.deiberts.domain
-    rancherImageTag: v2.9.1
+    rancherImageTag: v2.9.2
     useBundledChart: true
     agentTLSMode: "strict"
