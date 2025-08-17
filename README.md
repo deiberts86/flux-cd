@@ -27,6 +27,8 @@ Pre-Requisite:
   - copy it to a save location
   - ensure you have `kubectl` and `fluxcli` installed
     ```sh
+    # Install kubectl
     curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+    # Install fluxcli
     curl -s https://fluxcd.io/install.sh | sudo bash
     ```
