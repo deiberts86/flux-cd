@@ -24,5 +24,9 @@ Pre-Requisite:
 - Create a bastion host on your Harvester cluster once online
   - If you logically separated your vlans, ensure it lives in the management vlan
 - Get your Harvester `kubeconfig` while logged in your bastion host
-  - copy it to a save location.
-  - ensure you have `kubectl` and `fluxcli` installed.
+  - copy it to a save location
+  - ensure you have `kubectl` and `fluxcli` installed
+    ```sh
+    curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+    curl -s https://fluxcd.io/install.sh | sudo bash
+    ```
