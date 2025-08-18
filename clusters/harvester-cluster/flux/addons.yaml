@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
-  path: ./addons
+  path: ./clusters/harvester-cluster/addons
   prune: true
   soureRef:
     kind: GitRepository
