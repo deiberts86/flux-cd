@@ -33,7 +33,7 @@ Pre-Requisite:
     curl -s https://fluxcd.io/install.sh | sudo bash
     ```
 
-Setup FluxCD:
+Bootstrap Setup for FluxCD on GitHub:
 ```sh
 # Bootstrap
 export GITHUB_OWNER=<name>
