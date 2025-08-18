@@ -30,7 +30,7 @@ spec:
             - chart:
                 name: cert-manager
                 repo: https://charts.jetstack.io
-                version: v1.18.2
+                version: v1.17.4
               release:
                 name: cert-manager
                 namespace: cert-manager
@@ -44,7 +44,7 @@ spec:
                 name: rancher
                 namespace: cattle-system
               values: |
-                hostname: rancher.deiberts.domain
+                hostname: rancher.homelab
                 ingress:
                   tls:
                     source: rancher
