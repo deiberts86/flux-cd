@@ -4,4 +4,4 @@ resources:
 - harvester-seeder.yaml
 - rancher-logging.yaml
 - rancher-monitoring.yaml
-- rancher-vcluster.yaml
+- ./rancher-vcluster
