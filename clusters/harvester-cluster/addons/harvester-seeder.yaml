@@ -5,7 +5,7 @@ metadata:
   namespace: harvester-system
 spec:
   chart: harvester-seeder
-  enabled: false
+  enabled: true
   repo: http://harvester-cluster-repo.cattle-system.svc/charts
   valuesContent: |
     image:
