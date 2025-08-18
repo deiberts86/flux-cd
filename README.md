@@ -39,7 +39,7 @@ Setup FluxCD:
 export GITHUB_OWNER=<name>
 export GITHUB_BRANCH=<branch-name>
 export GITHUB_REPO=<your-repo-name>
-export GITHUB_PATH=<your-path-in-repo>
+export GITHUB_PATH=<your-path-in-repo/flux>
 # Paste your created Github token when it goes to the next line and press enter. This prevents it being stored in history.
 read -s GITHUB_TOKEN
 flux bootstrap github --owner=$GITHUB_OWNER --repository=$GITHUB_REPO   --branch=$GITHUB_BRANCH --path=$GITHUB_PATH --token-auth
