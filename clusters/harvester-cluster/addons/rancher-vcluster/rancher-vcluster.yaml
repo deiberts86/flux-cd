@@ -10,6 +10,9 @@ spec:
   enabled: true
   repo: https://charts.loft.sh
   valuesContent: |
+    hostname: rancher.homelab
+    rancherVersion: ''
+    bootstrapPassword: '1234567890'
     controlPlane:
       distro:
         k3s:
@@ -44,7 +47,6 @@ spec:
                 name: rancher
                 namespace: cattle-system
               values: |
-                hostname: rancher.homelab
                 ingress:
                   tls:
                     source: rancher
@@ -55,7 +57,6 @@ spec:
                       enabled: false
                 useBundledSystemChart: true
                 agentTLSMode: system-store
-                bootstrapPassword: "1234567890"
     sync:
       fromHost:
         ingressClasses:
