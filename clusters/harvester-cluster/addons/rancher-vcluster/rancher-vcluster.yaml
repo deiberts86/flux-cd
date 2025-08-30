@@ -15,7 +15,7 @@ spec:
         k3s:
           enabled: true
           image:
-            tag: v1.32.7-k3s1
+            tag: v1.33.3-k3s1
       statefulSet:
         resources:
           limits:
@@ -39,7 +39,7 @@ spec:
             - chart:
                 name: rancher
                 repo: https://releases.rancher.com/server-charts/latest/
-                version: v2.11.2
+                version: v2.12.1
               release:
                 name: rancher
                 namespace: cattle-system
