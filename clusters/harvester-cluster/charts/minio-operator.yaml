@@ -1,9 +1,8 @@
----
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
   name: minio-operator
-  namespace: minio-operator
+  namespace: flux-system
 spec:
-  interval: 15m
-  url: https://operator.min.io
+  interval: 10m
+  url: https://operator.min.io/
