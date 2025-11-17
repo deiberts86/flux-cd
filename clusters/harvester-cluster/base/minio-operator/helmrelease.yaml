@@ -9,14 +9,14 @@ spec:
   chart:
     spec:
       chart: operator
-      version: "7.1.1"
+      version: 7.1.1
       sourceRef:
         kind: HelmRepository
         name: *app
         namespace: flux-system
       interval: 10m
   install:
-    createNamespace: true
+    createNamespace: false
     remediation:
       retries: 3
     crds: Create
