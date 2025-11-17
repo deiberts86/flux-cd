@@ -32,7 +32,7 @@ spec:
       env:
       - name: OPERATOR_STS_ENABLED
         value: "on"
-      replicas: 1
+      replicaCount: 1
       resources:
         requests:
           cpu: 100m
