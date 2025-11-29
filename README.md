@@ -18,7 +18,7 @@ The concept to pair Harvester with FluxCD is to control components on Harvester 
 ### Setup
 Pre-Requisite:
 - You will need to setup Harvester HCI, note this will take some time to do this correctly based on your own requirements.
-  - The requirements and setup are found [HERE](https://docs.harvesterhci.io/v1.5/)
+  - The requirements and setup are found [HERE](https://docs.harvesterhci.io)
   - Plan your networking layout (I.E, if you're going to have logical vlans, build them now on your router / switching environment)
 - Create a bastion host on your Harvester cluster once online
   - If you logically separated your vlans, ensure it lives in the management vlan
