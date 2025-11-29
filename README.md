@@ -52,3 +52,6 @@ If done correctly, you should see the following from your bastion host CLI:
 ✔ source-controller: deployment ready
 ✔ all components are healthy
 ```
+
+### Leverage SOPS
+Found [HERE](./sops-readme.md)

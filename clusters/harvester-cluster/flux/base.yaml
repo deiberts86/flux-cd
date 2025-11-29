@@ -14,3 +14,7 @@ spec:
     namespace: flux-system
   dependsOn:
     - name: charts
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg

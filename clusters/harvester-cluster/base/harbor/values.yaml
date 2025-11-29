@@ -1,0 +1,19 @@
+externalURL: https://harbor.homelab
+
+expose:
+  tls:
+    certSource: secret
+    secret:
+      secretName: harbor-local-tls
+  ingress:
+    hosts:
+      core: harbor.homelab
+    annotations:
+      cert-manager.io/cluster-issuer: homelab-ca
+
+persistence:
+  persistentVolumeClaim:
+    database:
+      size: 5Gi
+    registry:
+      size: 30Gi
