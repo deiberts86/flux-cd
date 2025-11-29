@@ -26,6 +26,7 @@ spec:
                 secretKeyRef:
                   name: pihole-admin
                   key: password
+            # NOTE: When syncing DNS, ensure you have the same interface name across your replicas!
             - name: PRIMARY
               value: "https://192.168.5.253|$(PIHOLE_PASS)"
             - name: REPLICAS
