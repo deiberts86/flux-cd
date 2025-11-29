@@ -11,7 +11,7 @@ spec:
       chart: *app
       version: "v1.19.1"
       sourceRef:
-        kind: OCIRepository
+        kind: HelmRepository
         name: *app
         namespace: flux-system
       interval: 10m
