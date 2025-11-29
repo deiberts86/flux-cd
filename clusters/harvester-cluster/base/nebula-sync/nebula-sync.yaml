@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nebula-sync
+  namespace: nebula
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nebula-sync
+  template:
+    metadata:
+      labels:
+        app: nebula-sync
+    spec:
+      containers:
+        - name: nebula-sync
+          image: ghcr.io/lovelaze/nebula-sync:v0.11.1
+          resources:
+            requests:
+              cpu: 20m
+              memory: 32Mi
+          env:
+            - name: PIHOLE_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: pihole-admin
+                  key: password
+            - name: PRIMARY
+              value: "https://192.168.5.253|$(PIHOLE_PASS)"
+            - name: REPLICAS
+              value: "https://192.168.5.254|$(PIHOLE_PASS)"
+            - name: FULL_SYNC
+              value: false
+            - name: RUN_GRAVITY
+              value: false
+            - name: CRON
+              value: "*/15 * * * *"
+            - name: TZ
+              value: "America/New_York"
+            - name: CLIENT_SKIP_TLS_VERIFICATION
+              value: true
+            - name: SYNC_CONFIG_DNS
+              value: true
+            - name: SYNC_CONFIG_DHCP
+              value: false
+            - name: SYNC_CONFIG_NTP
+              value: false
+            - name: SYNC_CONFIG_RESOLVER
+              value: false
+            - name: SYNC_CONFIG_DATABASE
+              value: false
+            - name: SYNC_CONFIG_MISC
+              value: false
+            - name: SYNC_CONFIG_DEBUG
+              value: false
+            - name: SYNC_GRAVITY_DHCP_LEASES
+              value: false
+            - name: SYNC_GRAVITY_GROUP
+              value: false
+            - name: SYNC_GRAVITY_AD_LIST
+              value: true
+            - name: SYNC_GRAVITY_AD_LIST_BY_GROUP
+              value: true
+            - name: SYNC_GRAVITY_DOMAIN_LIST
+              value: true
+            - name: SYNC_GRAVITY_DOMAIN_LIST_BY_GROUP
+              value: true
+            - name: SYNC_GRAVITY_CLIENT
+              value: false
+            - name: SYNC_GRAVITY_CLIENT_BY_GROUP
+              value: false
