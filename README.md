@@ -10,10 +10,9 @@ The concept to pair Harvester with FluxCD is to control components on Harvester 
   - Install Core components with FluxCD
     - Cert Manager
     - Container Registry with Proxy-Cache
-    - OIDC
-    - Object Storage
-    - Virtual Routers
-    - vCluster with Rancher MCM
+    - Keycloak-X
+    - Object Storage with MinIO
+    - Virtual Routers (KubeOVN | More to come on this)
     - Gitlab or Gitea
 
 ### Setup
@@ -40,8 +39,8 @@ export GITHUB_OWNER=<name>
 export GITHUB_BRANCH=<branch-name>
 export GITHUB_REPO=<your-repo-name>
 export GITHUB_PATH=<your-path-in-repo/flux>
-# Paste your created Github token when it goes to the next line and press enter. This prevents it being stored in history.
 read -s GITHUB_TOKEN
+# Paste your created Github token when it goes to the next line and press enter. This prevents it being stored in history.
 flux bootstrap github --owner=$GITHUB_OWNER --repository=$GITHUB_REPO   --branch=$GITHUB_BRANCH --path=$GITHUB_PATH --token-auth
 ```
 

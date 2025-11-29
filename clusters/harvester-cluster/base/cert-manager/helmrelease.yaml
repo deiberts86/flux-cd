@@ -1,17 +1,17 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: &app minio-operator
+  name: &app cert-manager
   namespace: *app
 spec:
   interval: 10m
   releaseName: *app
   chart:
     spec:
-      chart: operator
-      version: 7.1.1
+      chart: *app
+      version: "v1.19.1"
       sourceRef:
-        kind: HelmRepository
+        kind: OCIRepository
         name: *app
         namespace: flux-system
       interval: 10m
@@ -19,24 +19,21 @@ spec:
     createNamespace: false
     remediation:
       retries: 3
-    crds: Create
   upgrade:
     remediation:
       retries: 3
-    crds: CreateReplace
   rollback:
     timeout: 15m
     disableWait: false
   values:
-    operator:
-      env:
-      - name: OPERATOR_STS_ENABLED
-        value: "on"
-      replicaCount: 1
-      resources:
-        requests:
-          cpu: 100m
-          memory: 256Mi
-        limits:
-          cpu: 500m
-          memory: 512Mi
+    crds:
+      enabled: true
+    prometheus:
+      enabled: true
+      podmonitor:
+        enabled: true
+    # config:
+    #   apiVersion: controller.config.cert-manager.io/v1alpha1
+    #   kind: ControllerConfiguration
+    #   enableGatewayAPI: true
+    
