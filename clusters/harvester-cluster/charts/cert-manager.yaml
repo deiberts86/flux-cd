@@ -6,4 +6,4 @@ metadata:
 spec:
   type: "oci"
   interval: 10m0s
-  url: oci://quay.io/jetstack/charts/cert-manager
+  url: oci://quay.io/jetstack/charts
