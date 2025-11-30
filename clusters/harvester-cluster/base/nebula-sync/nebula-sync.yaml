@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -21,12 +22,13 @@ spec:
               cpu: 20m
               memory: 32Mi
           env:
+            # NOTE1: You can do this with both physical or virtual pi-hole instances.
+            # NOTE2: When syncing DNS, ensure you have the same interface name across your replicas! Otherwise, you need an "SYNC_CONFIG_DNS_EXCLUDE" configuration
             - name: PIHOLE_PASS
               valueFrom:
                 secretKeyRef:
                   name: pihole-admin
                   key: password
-            # NOTE: When syncing DNS, ensure you have the same interface name across your replicas!
             - name: PRIMARY
               value: "https://192.168.5.253|$(PIHOLE_PASS)"
             - name: REPLICAS
@@ -43,6 +45,8 @@ spec:
               value: "true"
             - name: SYNC_CONFIG_DNS
               value: "true"
+            - name: SYNC_CONFIG_DNS_EXCLUDE
+              value: "interface"
             - name: SYNC_CONFIG_DHCP
               value: "false"
             - name: SYNC_CONFIG_NTP
