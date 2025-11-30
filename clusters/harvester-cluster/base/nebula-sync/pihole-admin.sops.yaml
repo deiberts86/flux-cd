@@ -4,36 +4,36 @@ metadata:
     name: pihole-admin
     namespace: nebula
 type: Opaque
-stringData:
-    password: ENC[AES256_GCM,data:VZ17jexZfpcvegw=,iv:vPzwL5m8moKNmIE9wYw0o5ZKHkX0TCjS/0zd4q+Kj0Y=,tag:7Hun30ITOJQLMwDpKLhRyA==,type:str]
+data:
+    password: ENC[AES256_GCM,data:PkHkxkUaUzBqX3YcOUwtMw==,iv:1dEnziWuHjMLSu645ZpSMBZs06wt+yrRB7D6/cR/KEA=,tag:zulD5kcfnpEjaBaBaLyihQ==,type:str]
 sops:
     kms: []
     gcp_kms: []
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2025-11-29T22:29:20Z"
-    mac: ENC[AES256_GCM,data:wm9ioOxTUbdb736+Vb2/Nwdgux1MmUfj2pOCkUgjSkIWGMpV6368UyFXSpy2Tzp9BmnthogaPFsFo9FcjXaFIlzz9dFACacY15etFe63eCxEmBurGjb/61xcL881BmVNdyQL2MrYAt81ZFDpiiy00P93XJg0kaymkrZ9V/RxNG0=,iv:aJUFEOeDp+x2tgfJ9yvqbQQfXKcBo90RMV/mp+Xxgvo=,tag:WYgGk/OoWMoaQuujm0amtw==,type:str]
+    lastmodified: "2025-11-30T02:58:16Z"
+    mac: ENC[AES256_GCM,data:PabsjFKsPprQyVzuBIQZ5jbhRFwTagHnSUVJq12pQEsu1mX4mC1TevHFSoaD+szOMHXfNRjnuUMgXtQ8RuHKOjrk9zV1SHSqCcNe7NJn8KdFzA/6ebP4bFT43qynyyrkvKQyzmFAe7fqj8rpF7FcRcvRbMY6+cNP6skFDOzh144=,iv:+VrscemZDPO4nKUa+2Y+wWl6AbQyvI3KmO6NitX6Zls=,tag:vaaAe3bp4AQSx1AvuGGHrA==,type:str]
     pgp:
-        - created_at: "2025-11-29T22:29:20Z"
+        - created_at: "2025-11-30T02:58:16Z"
           enc: |-
             -----BEGIN PGP MESSAGE-----
 
-            hQIMAybZwhlimvyVAQ//ZiN3eFChQ7ZpjwQceB8vX5HMwRaDKoyJz2eRb8P6uJA8
-            E4nITbAPR3eyU24UkaWclvWS1TEfKg0CTXCpZDYtGk9YmszKvbFKMG9X3iXKlGHV
-            2WTKpKsA5IIZDBeZ8NKXZ0PNE2yLJaigZ+w1GBcXKYlMkuAE5sOijxQynhiOp5GE
-            8KovKfrLILeV3b92gRoVq5UpZ5nNb0rpom+CjE8dp/pNKZ0tq2REr9FRFMYBoXO0
-            SNMb6czDwd3Iwt//L+/yvsj3m5xoUQ7ljsq8gCAEtlSagANi2fRVYe6w3fVWjIJe
-            3ydhPjknkkEvqcPXTFiEXb7ElxOW9/wN+auIem/CIZ1+6BTyJO3K58Ho6QqQRieh
-            hd4dNSxbx4QofrT8igiZV4bliPgXUS3dnWAKCiMnChrLIYwp+C/q02/x6o49NEti
-            w6mWx9jR0BlK6TGNTzKyv2EsbbYs3Lo6QiAUma6CJcsfe5K+A0u4AzIwo336m+iN
-            fxfbVGBkqpYp5aLYwY/fjfs7ndy0EdlyzT2HLzlRHmZZ8VwKgKYdEDUZcocm1sMc
-            MZAI6yli+WxFImVVLws91t886KOeM7OEKRCybsRm0w6DTnQAI9GF6GzDuipHcoCi
-            IZsbN+btgFZy2+fZWLGKOohm0zGse4BVbBTxJRInoosp5BlA4Ywksqre20yqEb3U
-            ZgEJAhCnmPIbdyqVO41ojmQxGBcvULRr32i8IGaKli2PkgysS8mRbzeIFpViYnWV
-            bjk94ogcoOdkcIwfii+3cZeOnswhWeQZqJibFWuvdOl+2BQ7x4//g2pcnxmbxAnC
-            inV1l4IWjA==
-            =59/J
+            hQIMAybZwhlimvyVAQ//aUqNO06nGVnd8uajI1m8AWTao5fv8ITgj/X8uVBReUVy
+            8hkh0i12EqbjZNkY5J8w72YMibM0sphn4EsTGhrO2qdPOuu1zIE9hDF5y5Lb+l9E
+            ELeleg3DTI4z0poR4CyBh4M3LJBi6mupW2tbqWND9FFuqoq8tuRFL9XTHqe+iMT6
+            NJ1Gz3BR2HbEU9dK67GehPMSVMz6DD+Vffn3ni+MzdUx6tid8iVofxPXcW57ZD+8
+            zSYYFbMnihUN4m1eiydyAhDPiiFYCDuAOO6YT+hgfXMYJy5o8yyKMQpNfx0ulxYS
+            aB3qxhc6e+etNVU2gYF57W9if8A9PU6VmLmRJ3ksnZX7PoQlrlPT5QIif89dp+ab
+            i/rAIukdYhUsqy+HeQh8T9tqPl4H+cHhkQp3Ms59sEMk5vYpnrEO4CeCsZOp/NIJ
+            kDMhjd13GVGz9sXgxsJSu+UysLqJRszmuhB6GZfEb4vCL/0fL8UKTvRlDQxMaoWP
+            jlzHpwfIJbIndA2+Wxm6iLdqXtISLqku+wLU+1mkvEcZ2JubacmPaSmF4KtVc7bK
+            kT6ELbNUSxtHLe81qq5kD8zmh2kvSTNPXtbFfdAry5XjPM1Luwh1mLDeUUp7WeRh
+            hmYHUCwuCowopyFz8V6c5xisA3Pl46Khu5lTdK6uAiXNWyxy2jYH34461myxRL3U
+            ZgEJAhAbGybK62SP5fx39xxw9tfZ5Hgyx1a3zvHns+AKcsI28EBW97mi6VcpkKsv
+            J10JctFfgc7s4G36q1Q/m/nZw2I2OirH4pIdC1DOk+3R63J/exHqyr/BoV1Gc04z
+            ZUw8qzzZVA==
+            =B4Eu
             -----END PGP MESSAGE-----
           fp: 61026EB60835C9F13F6A9990B754BDB32786572A
     encrypted_regex: ^(data|stringData|env|password|token|username|email|auth|clientSecret|accessKey)$

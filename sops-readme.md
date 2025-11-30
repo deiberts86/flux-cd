@@ -30,7 +30,7 @@ sudo chmod +x /usr/local/bin/sops
 
 ```bash
 # Set Env Vars and adjust accordingly
-export KEY_NAME="harvester.homelab"
+export KEY_NAME="homelab"
 export KEY_COMMENT="flux secrets"
 
 # This should create a new key and revocation file
@@ -85,7 +85,7 @@ gpg --import sops-gpg-backup.asc
 
 
 ## Configure your .sops.yaml file
-For this setup, we will keep things simple and ask that you just put this new file at the root location of your `cluster/<clustername>/.sops.yaml`. Because I want this to cover everything, I did it the lazy way to ensure I don't have surprises later on. Basically these `creation_rules` covers every folder. Even though it's `lazy`, it covers my basis incase I forget a repo (which wouldn't be good). 
+For this setup, we will keep things simple and ask that you just put this new file at the root location of your `cluster/<clustername>/.sops.yaml`. Because I want this to cover everything, I did it the lazy way to ensure I don't have surprises later on. Basically these `creation_rules` covers every folder. Even though it's `lazy`, it covers my basis incase I forget a repo (which wouldn't be good).
 
 ```yaml
 # Create .sops.yaml in your root FluxCD repo and add the following to the file.
@@ -119,3 +119,22 @@ spec:
     secretRef:
       name: sops-gpg
 ```
+
+## Sample Secret
+IMPORTANT: If using `stringData`, the MACS will change because FluxCD will interpret this and convert to `data` field.  Ideally, use base64 encoded value (key=value) within your Kubernetes secret within the `data` and then encrypt before commiting your code.
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+    name: sample-secret
+    namespace: default
+type: Opaque
+data:
+    password: <your-base64-encoded-secret>
+```
+Once the file is ready, simply execute the following:
+```bash
+sops -e --in-place <path>/sample-secret.sops.yaml 
+```
+
