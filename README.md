@@ -16,7 +16,7 @@ The concept to pair Harvester with FluxCD is to control components on Harvester 
     - Gitlab or Gitea
 
 ### Setup
-Pre-Requisite:
+Pre-Requisites:
 - You will need to setup Harvester HCI, note this will take some time to do this correctly based on your own requirements.
   - The requirements and setup are found [HERE](https://docs.harvesterhci.io)
   - Plan your networking layout (I.E, if you're going to have logical vlans, build them now on your router / switching environment)
@@ -31,6 +31,10 @@ Pre-Requisite:
     # Install fluxcli
     curl -s https://fluxcd.io/install.sh | sudo bash
     ```
+
+
+### Install FluxCD
+There are quite a few ways to bootstrap FluxCD but I choose for my homelab to bootstrap it with `FluxCLI`. Ideally for production environments, IaC or some automated fashion through Github actions or Gitlab runners. 
 
 Bootstrap Setup for FluxCD on GitHub:
 ```sh
@@ -52,6 +56,15 @@ If done correctly, you should see the following from your bastion host CLI:
 ✔ source-controller: deployment ready
 ✔ all components are healthy
 ```
+
+### Upgrade Flux
+Per "Cluster" that was bootstrapped will require this function if you need or want to upgrade FluxCD. Note, my path is a tad different but what this command below really does under the hood is literally update the pods or configuration of the deployments for FluxCD. A new branch should be created for this upgrade process.
+```sh
+export FLUXVER=v2.7.5
+flux install --version=$FLUXVER --export > ./clusters/<cluster-name>/flux/flux-system/gotk-components.yaml
+```
+
+You should see a change on the original `gotk-components.yaml` while executing a `git status` command. Add this new change, commit, and push to your branch. Validate and merge branch to main (assuming you're using main as the source of truth for your cluster of choice).
 
 ### Leverage SOPS
 Found [HERE](./sops-readme.md)
