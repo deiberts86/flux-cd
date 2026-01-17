@@ -1,9 +1,16 @@
 image:
   repository: harbor.homelab/ghcr-proxy-cache/gethomepage/homepage
   tag: "latest"
+
+env:
+  - name: LOG_TARGETS
+    value: "stdout"
+  - name: HOMEPAGE_ALLOWED_HOSTS
+    value: "homepage.homelab"
+
 config:
   settings:
-    disableHostValidation: false
+    disableHostValidation: true
   bookmarks:
     - Developer:
         - Github:
