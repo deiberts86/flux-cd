@@ -26,5 +26,9 @@ spec:
     timeout: 15m
     disableWait: false
   valuesFrom:
-  - kind: ConfigMap
-    name: homepage-values
+    - kind: ConfigMap
+      name: homepage-values
+      valuesKey: values.yaml
+    - kind: Secret
+      name: homepage-values-secret
+      valuesKey: values.yaml
