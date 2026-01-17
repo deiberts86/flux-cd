@@ -1,75 +1,113 @@
 image:
-  repository: harbor.homelab/ghcr-proxy-cache/gethomepage/homepage
-  tag: "latest"
-
+    repository: harbor.homelab/ghcr-proxy-cache/gethomepage/homepage
+    tag: latest
 env:
-  - name: LOG_TARGETS
-    value: "stdout"
-  - name: HOMEPAGE_ALLOWED_HOSTS
-    value: "homepage.homelab"
-
-config:
-  settings:
-    disableHostValidation: true
-  bookmarks:
-    - Developer:
-        - Github:
-            - abbr: GH
-              href: https://github.com/deiberts86
-  services:
-    - Infra Management:
-        - Chassis-iDRAC:
-            href: https://192.168.5.17/
-            icon: dell.png
-            description: Dell Server iDRAC
-    - Infra Services - homelab:
-        - Harvester-Lab:
-            href: https://192.168.5.20/
-            icon: harvester
-            description: Harvester Lab UI
-  widgets:
-    # show the kubernetes widget, with the cluster summary and individual nodes
-    - kubernetes:
-        cluster:
-          show: true
-          cpu: true
-          memory: true
-          showLabel: true
-          label: "cluster"
-        nodes:
-          show: true
-          cpu: true
-          memory: true
-          showLabel: true
-    - search:
-        provider: duckduckgo
-        target: _blank
-  kubernetes:
-    mode: cluster
-
-# The service account
+    - name: ENC[AES256_GCM,data:bOUBYGVMpP1braU=,iv:hqAuzxP27B7BlBBhACllBUbanII+Wr4nHtk2BORCfS4=,tag:Eb2ozInxavNyPdgkvK7sVA==,type:str]
+      value: ENC[AES256_GCM,data:iPAEPThE,iv:vEM5fNriRoZScaOWhJgFqXUA+lPdlLR7etzvfJxI0ro=,tag:wBy2EV7c4Yp4WeBnHC/BPw==,type:str]
+    - name: ENC[AES256_GCM,data:rEeytFZP79B43HshRBJ8FH4WwP65VQ==,iv:yR23hC+/Oy01LccvDhq8XIviOl2eoJot9XD1LnQQcY4=,tag:lz+8Ifl10hyQziGxoIMw0A==,type:str]
+      value: ENC[AES256_GCM,data:KRhTPblpcqu406iVE8MwQA==,iv:CDitOH0kvleFO9YWvWdLuitEH3MuwlvMP6f43QVOH/Q=,tag:pR71pEefTb1VXx9qQIVbEQ==,type:str]
 serviceAccount:
-  create: true
-  name: homepage
-
+    create: true
+    name: homepage
 enableRbac: true
-
+config:
+    settings:
+        disableHostValidation: true
+    bookmarks:
+        - Developer:
+            - Github:
+                - abbr: GH
+                  href: ENC[AES256_GCM,data:AKrfz5o2O77NdrwnwAJ+oPW9fw==,iv:B0G9QprYLu0/XVpbhVw+OqgxfaZweWprny0pL8R8/ng=,tag:bYmuNWOG7K2XGt/rJAbGRA==,type:str]
+    services:
+        - Infra Management:
+            - Dell-iDRAC:
+                href: ENC[AES256_GCM,data:NtO8lH8StfSwYfeh6N7lpW1xu2Wh,iv:P2l5QG3k1EIohUV7FoESotBnuRWSocZFBvoYJ8h097g=,tag:eCaeVr1YD4ENGmGGgMRR9g==,type:str]
+                icon: dell.svg
+                description: Dell Server iDRAC
+            - Pi-KVM:
+                href: ENC[AES256_GCM,data:9TJH7eDPPGR9Qw+ICXzGaR8ng8Qa,iv:uxvESCSTtO3tiCFJZrZX51BSpDED6dkIbgf4L+3mowc=,tag:rWi7XIOyLsmV+5WR9HIQLw==,type:str]
+                icon: pikvm.svg
+                description: Pi-KVM Chassis
+            - Pi-Hole_1:
+                href: ENC[AES256_GCM,data:YM6Th5j27WiMAroAPARc1fvJ5+G4,iv:MzvQWS0FRJq2Zajkn80qhCZJJgZYCUAQNmbjssjSJ5A=,tag:+AsYeIGUOqdIm5hIcBfT9A==,type:str]
+                icon: pi-hole.svg
+                description: Primary Pi-Hole DNS server
+            - Pi-Hole_2:
+                href: ENC[AES256_GCM,data:rXZrMj/YL59WT4yfsWYTS6egMQ/F,iv:xQrW3IJSKsjdNYdYg/Es4jHIXmjV6Y07ILU6TAsPYC4=,tag:wbhgXJKjhs5fzFN7hm2FOw==,type:str]
+                icon: pi-hole.svg
+                description: Secondary Pi-Hole DNS server
+            - Infra Services - homelab:
+                - Harvester-Lab:
+                    href: ENC[AES256_GCM,data:DOQ4tE+qRuoz/qaVqCO2ofgcDxcF,iv:EYtAmYg+q+Vc72KPbZRbJt+6bOEx/0/Do9Ytcg7rQQA=,tag:kS1aPeo4zlNfgE3gZlgNgQ==,type:str]
+                    icon: harvester.svg
+                    description: Harvester Lab UI
+    widgets:
+        # show the kubernetes widget, with the cluster summary and individual nodes
+        - kubernetes:
+            cluster:
+                show: true
+                cpu: true
+                memory: true
+                showLabel: true
+                label: cluster
+            nodes:
+                show: true
+                cpu: true
+                memory: true
+                showLabel: true
+        - search:
+            provider: duckduckgo
+            target: _blank
+    kubernetes:
+        mode: cluster
 ingress:
-  main:
-    enabled: true
-    annotations:
-      gethomepage.dev/enabled: "true"
-      gethomepage.dev/name: "Homepage"
-      gethomepage.dev/description: "Dynamically Detected Homepage"
-      gethomepage.dev/group: "Dynamic"
-      gethomepage.dev/icon: "homepage.png"
-      cert-manager.io/cluster-issuer: "homelab-ca"
-    hosts:
-      - host: homepage.homelab
-        paths:
-          - path: /
-            pathType: Prefix 
-    tls:
-      - hosts:
-          - homepage.homelab
-        secretName: homepage-tls
+    main:
+        enabled: true
+        annotations:
+            gethomepage.dev/enabled: "true"
+            gethomepage.dev/name: Homepage
+            gethomepage.dev/description: Dynamically Detected Homepage
+            gethomepage.dev/group: Dynamic
+            gethomepage.dev/icon: homepage.png
+            cert-manager.io/cluster-issuer: homelab-ca
+        hosts:
+            - host: homepage.homelab
+              paths:
+                - path: /
+                  pathType: Prefix
+        tls:
+            - hosts:
+                - homepage.homelab
+              secretName: homepage-tls
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2026-01-17T20:38:45Z"
+    mac: ENC[AES256_GCM,data:sfdGlCYUrypGO2NcGviLyg7WE10xJ+1VptHS6SbbgF8/matnvYwEPfh/OEBp5Ww5DJot29DXqhinRC3fBtFIc6o7s4hwn5iRm2ICq8s/zAahF1AM3EprUO6QDFtLdWVB48dYW6CgJrLMqHcSCrEqQjOoCnNAy/m6jNlhK3HjaW4=,iv:mwWiVsJ4Y8NR97hhjBcJJhy6d2gtgUcpDvVsQDD+UjI=,tag:xfDpEogEv8nOLFsK3PoI9w==,type:str]
+    pgp:
+        - created_at: "2026-01-17T20:38:45Z"
+          enc: |-
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMAybZwhlimvyVARAAwbK3as8+URRyZs/5Gs9SDiYeBXYIlHnAlMoHWzRrI3uI
+            MNTOikaJFl2ol979BHcrHSVSVAOiZvskZ1DMJh2fjBcJElr0QnLArJ9XxKEfUUkj
+            6eNrRPMhkLTBHNbmwpYZiA5bbn6WSsR3jaGhTwX/RoFPFTeyS3E0O5q2APw+8l7b
+            xKJio0KjHxdEBsa6v5r6HJkTCV/HN+onbqtK+0mKrw7pYSJxCmlWdg08W7zCMLkE
+            HF8HCDeJVELEwVAwOADPBYaD+0aPxjpb1YWZ0lpGMBQ4NVsht+Aj+6K7i0OA5mV1
+            mluY5M71AdDTL4AwAO/bUVMLcjhYXFvztAlCe4vuUAplE7wH7YHJBIemlPHN+YKw
+            p/mKxS1AOaC5a/L+Q3oCCImaKM0nxHJoU8C4jRb/ubYDVSBNfyY4hONTiOMYRviM
+            XwbcFgcydcsUEPzK/U0DQxYtteZroZrSdi37XkKTlD2PqSd2LwulMGp4EFVQLbDl
+            SMiGglGEQeafXjwfXkUHsSF6NHCGUyP+FuovXiL1ubb6XS/oPSUhEZnDpvohHgwX
+            ml/mL2swE7shI8C9dvNWHC/qTAmTbs7RkM12PFzBaltb1kbbh2VSv5J1dJhbxtb3
+            Bf0FwW2PlsgiQym5OWQBD75M8Bfb+CydxFukp7xYfDF3w/EyJ//ZPBJhXd/KZ6TU
+            aAEJAhDw4yTiIlj2QhaE6Fq9VsNw7gp+gxLhNOXWKMzktaLVd8aVuAihidvzgp9Z
+            R2o7/8x5Y1Ads7P12QywNJ7w3+LZ7x7hnl6ZQwOIU/qj/BOeyGsH3+UPnZLtOvDs
+            +lQQR1G91xTH
+            =khR4
+            -----END PGP MESSAGE-----
+          fp: 61026EB60835C9F13F6A9990B754BDB32786572A
+    encrypted_regex: ^(data|stringData|env|password|token|username|email|auth|clientSecret|accessKey|href)$
+    version: 3.9.1
