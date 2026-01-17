@@ -2,6 +2,8 @@ image:
   repository: harbor.homelab/ghcr-proxy-cache/gethomepage/homepage
   tag: "latest"
 config:
+  settings:
+    disableHostValidation: false
   bookmarks:
     - Developer:
         - Github:
@@ -37,8 +39,6 @@ config:
         target: _blank
   kubernetes:
     mode: cluster
-  settings:
-    disableHostValidation: true
 
 # The service account
 serviceAccount:
