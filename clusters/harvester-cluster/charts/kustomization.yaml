@@ -3,4 +3,5 @@ kind: Kustomization
 resources:
 - cert-manager.yaml
 - harbor.yaml
+- homepage.yaml
 - minio-operator.yaml

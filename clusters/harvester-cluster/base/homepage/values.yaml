@@ -1,0 +1,68 @@
+image:
+  repository: harbor.homelab/ghcr-proxy-cache/gethomepage/homepage
+  tag: "latest"
+config:
+  bookmarks:
+    - Developer:
+        - Github:
+            - abbr: GH
+              href: https://github.com/deiberts86
+  services:
+    - Infra Management:
+        - Chassis-iDRAC:
+            href: https://192.168.5.17/
+            icon: dell.png
+            description: Dell Server iDRAC
+    - Infra Services - homelab:
+        - Harvester-Lab:
+            href: https://192.168.5.20/
+            icon: harvester
+            description: Harvester Lab UI
+  widgets:
+    # show the kubernetes widget, with the cluster summary and individual nodes
+    - kubernetes:
+        cluster:
+          show: true
+          cpu: true
+          memory: true
+          showLabel: true
+          label: "cluster"
+        nodes:
+          show: true
+          cpu: true
+          memory: true
+          showLabel: true
+    - search:
+        provider: duckduckgo
+        target: _blank
+  kubernetes:
+    mode: cluster
+  settings:
+    disableHostValidation: true
+
+# The service account
+serviceAccount:
+  create: true
+  name: homepage
+
+enableRbac: true
+
+ingress:
+  main:
+    enabled: true
+    annotations:
+      gethomepage.dev/enabled: "true"
+      gethomepage.dev/name: "Homepage"
+      gethomepage.dev/description: "Dynamically Detected Homepage"
+      gethomepage.dev/group: "Dynamic"
+      gethomepage.dev/icon: "homepage.png"
+      cert-manager.io/cluster-issuer: "homelab-ca"
+    hosts:
+      - host: homepage.homelab
+        paths:
+          - path: /
+            pathType: Prefix 
+    tls:
+      - hosts:
+          - homepage.homelab
+        secretName: homepage-tls
