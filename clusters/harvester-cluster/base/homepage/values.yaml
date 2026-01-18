@@ -11,6 +11,8 @@ enableRbac: true
 config:
     settings:
         disableHostValidation: true
+        theme: dark
+        color: neutral
     bookmarks:
         - AI Platforms:
             - ChatGPT:
