@@ -14,8 +14,28 @@ config:
     bookmarks:
         - Developer:
             - Github:
-                - abbr: GH
+                - icon: github.svg
+                  abbr: GH
                   href: https://github.com/
+                  
+        - Entertainment:
+            - YouTube:
+                - icon: youtube.svg
+                  abbr: YT
+                  href: https://youtube.com/
+            - Rumble:
+                - icon: rumble.svg
+                  abbr: RB
+                  href: https://rumble.com/
+            - Spotify:
+                - icon: spotify.svg
+                  abbr: SP
+                  href: https://open.spotify.com/
+            - SoundCloud:
+                - icon: soundcloud.svg
+                  abbr: SC
+                  href: https://soundcloud.com/
+            
     widgets:
         # show the kubernetes widget, with the cluster summary and individual nodes
         - kubernetes:
@@ -30,6 +50,10 @@ config:
                 cpu: true
                 memory: true
                 showLabel: true
+        - pihole:
+            url: https://192.168.5.253
+            version: 6
+            key: Elemental2!
         - search:
             provider: duckduckgo
             target: _blank
