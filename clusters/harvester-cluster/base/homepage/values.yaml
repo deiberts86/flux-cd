@@ -13,6 +13,13 @@ config:
         disableHostValidation: true
         theme: dark
         color: neutral
+        background: 
+          image: https://unsplash.com/photos/white-lighthouse-on-brown-rocky-mountain-near-body-of-water-during-daytime-BI51gpec1VE
+          blur: sm # sm, "", md, xl... see https://tailwindcss.com/docs/backdrop-blur
+          saturate: 50 # 0, 50, 100... see https://tailwindcss.com/docs/backdrop-saturate
+          brightness: 50 # 0, 50, 75... see https://tailwindcss.com/docs/backdrop-brightness
+          opacity: 50 # 0-100
+
     bookmarks:
         - AI Platforms:
             - ChatGPT:
