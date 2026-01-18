@@ -1,0 +1,69 @@
+image:
+    repository: harbor.homelab/ghcr-proxy-cache/gethomepage/homepage
+    tag: latest
+
+serviceAccount:
+    create: true
+    name: homepage
+
+enableRbac: true
+
+config:
+    settings:
+        disableHostValidation: true
+    bookmarks:
+        - AI Platforms:
+            - ChatGPT:
+                - icon: chatgpt.svg
+                  abbr: CG
+                  href: https://chatgpt.com
+            - GROK:
+                - icon: grok.svg
+                  abbr: GK
+                  href: https://grok.com
+                
+        - Developer:
+            - Github:
+                - icon: github.svg
+                  abbr: GH
+                  href: https://github.com/
+                  
+        - Entertainment:
+            - YouTube:
+                - icon: youtube.svg
+                  abbr: YT
+                  href: https://youtube.com/
+            - Rumble:
+                - icon: rumble.svg
+                  abbr: RB
+                  href: https://rumble.com/
+            - Spotify:
+                - icon: spotify.svg
+                  abbr: SP
+                  href: https://open.spotify.com/
+            - SoundCloud:
+                - icon: soundcloud.svg
+                  abbr: SC
+                  href: https://soundcloud.com/
+            
+    widgets:
+        - search:
+            provider: duckduckgo
+            target: _blank
+    kubernetes:
+        mode: cluster
+
+ingress:
+    main:
+        enabled: true
+        annotations:
+            cert-manager.io/cluster-issuer: homelab-ca
+        hosts:
+            - host: homepage.homelab
+              paths:
+                - path: /
+                  pathType: Prefix
+        tls:
+            - hosts:
+                - homepage.homelab
+              secretName: homepage-tls

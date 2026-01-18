@@ -1,0 +1,7 @@
+creation_rules:
+  - path_regex: .*\.ya?ml$
+    encrypted_regex: '^(data|stringData|env|password|token|username|email|auth|clientSecret|accessKey|href)$'
+    pgp: 61026EB60835C9F13F6A9990B754BDB32786572A
+  - path_regex: .*\.json
+    encrypted_regex: '^(password|token|username|email|auth|clientSecret|accessKey)$'
+    pgp: 61026EB60835C9F13F6A9990B754BDB32786572A

@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: pihole-admin
+    namespace: nebula
+type: Opaque
+stringData:
+    password: ENC[AES256_GCM,data:SdOGeaNwvS9+lsE=,iv:R3z3xTmFaZ2W9WEy1avoo0McoEeesZqpUyjP6c6KHLw=,tag:k+QydFk7OMAMQ5XL3DtM8g==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2025-11-30T04:32:05Z"
+    mac: ENC[AES256_GCM,data:5wrklpsh2G7Jt802WnaanHkmzQzEYQm2TiV4N2Qx8I2MgDpKg3wEbKP/1rCsliyTrZrqhstfAYGw9Te7A/0kuqkLabmtIGtQxVSueRqWr9C+9rjeMpwpBxd8oawbfBzJBI5Of32K0MAtdhexfHeV49GyOVGHTSk4xfJQ05Cpv6c=,iv:58Na5dvvs9ZYJxVvHp/KaeCgYTG+nSfZN5NDNblKSFs=,tag:YySvEXYXE9CTZOPm8suKZw==,type:str]
+    pgp:
+        - created_at: "2025-11-30T04:32:05Z"
+          enc: |-
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMAybZwhlimvyVARAA0K/DahR2sHU74L8caC2FewHSoYB0EPwcWEFdpRfSMmkE
+            tldKsWLtL596+1bGYOv4nLfNSjYkIUe/LHodqw8lN12aXzQwwhcEGmeBSDnWXnDU
+            3o1uXZwsq7ojcoBTXGvYYZjJzsRTIT/2/qRDQch23yxBRxLmeF/2Yt7ioasSGiDH
+            KNCWt3HM+5459m0A2SEu23gDGcsaL9/QdnW6zvUJf6iiftVPM1y4eQt0HBqimkVC
+            ZEJBw6eZVwYKtRqg1Yc36cQQGrF2IAXR+quOm94DkXCIHHmOlUbZi/T9SLPRHHYj
+            SgFhk8iYbwNQWZVV7O4ahpscYfCEnqedHluYJRhmlr4nyJVuiHv5dqNCw6gFj3Dt
+            jPFRE3HidEIbMsZjzVI1QC3nW5tWWHzD9di6972LVBe1v2JUUzD+s+N1mcTxLo8H
+            Zz6lL3BWIGQ96qC5U6DICHHUTCVkFT4DlYdlMH2uIkRm0vW/6Fnd2/HTiBh0oc8D
+            iof27Vyi5uPjPlKr1nCMgLHkoIh3TNHvbhdRDCCx5sbSBFSFUkT1vYwZhnYXLB1A
+            JbGFrQRvqXdovwK0MsUDvL0LFb4fVjSlHRAPkaZVAzAtXntG/hd954UxhzcWci7F
+            6mI9NWHGkRE8dhUc5HNGhz3Hn6B+E5PA0STzd51f6zYKdEw6yE9BTixa8DJiyarU
+            aAEJAhCH0sYrtoprDO7rl0nTGN0rWVuybiJVyo+XriulZ7feWFIWlX8UPlYBEZXF
+            AN5AmCHpFbTvi3LvkOpRhyKE0K2p+WLuCgPfVKPsxyIAu2RJX9Of+JBS/QRHEew9
+            +Yd8YtqRlpI8
+            =lvDA
+            -----END PGP MESSAGE-----
+          fp: 61026EB60835C9F13F6A9990B754BDB32786572A
+    encrypted_regex: ^(data|stringData|env|password|token|username|email|auth|clientSecret|accessKey)$
+    version: 3.9.1
