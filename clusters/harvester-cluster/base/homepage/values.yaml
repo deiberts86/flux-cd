@@ -45,11 +45,6 @@ config:
                 - icon: soundcloud.svg
                   abbr: SC
                   href: https://soundcloud.com/
-            
-    widgets:
-        - search:
-            provider: duckduckgo
-            target: _blank
     kubernetes:
         mode: cluster
 
