@@ -90,7 +90,6 @@ If you ever needed to re-import the secret key, here's how to do this below.
 gpg --import sops-gpg-backup.asc
 ```
 
-
 ## Configure your .sops.yaml file
 
 For this setup, we will keep things simple and ask that you just put this new file at the root location of your `cluster/<clustername>/.sops.yaml`. Because I want this to cover everything, I did it the lazy way to ensure I don't have surprises later on. Basically these `creation_rules` covers every folder. Even though it's `lazy`, it covers my basis incase I forget a repo (which wouldn't be good).
