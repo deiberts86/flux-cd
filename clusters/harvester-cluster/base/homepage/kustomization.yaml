@@ -10,5 +10,5 @@ configMapGenerator:
   - values.yaml
 resources:
 - helmrelease.yaml
-- homepage-values-secret.yaml
+- homepage-values-secret.sops.yaml
 - namespace.yaml

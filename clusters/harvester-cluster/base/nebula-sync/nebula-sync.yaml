@@ -45,6 +45,7 @@ spec:
               value: "true"
             - name: SYNC_CONFIG_DNS
               value: "true"
+            # Ref NOTE2 above
             - name: SYNC_CONFIG_DNS_EXCLUDE
               value: "interface"
             - name: SYNC_CONFIG_DHCP
