@@ -2,7 +2,7 @@
 
 Home lab is now leveraging SUSE Harvester HCI (Hyper Converged Infrastructure) that replaced my ESX-I host I had. KubeVirt is used under the hood on top of RKE2. Virtual machines are containerized and deployed ontop of Kubernetes (K8s).
 
-More [HERE](https://harvesterhci.io/)
+More [Get Harvester](https://harvesterhci.io/)
 
 ## Harvester With FluxCD
 
@@ -25,14 +25,16 @@ The concept to pair Harvester with FluxCD is to control components on Harvester 
 ### Setup
 
 Pre-Requisites:
+
 - You will need to setup Harvester HCI, note this will take some time to do this correctly based on your own requirements.
-  - The requirements and setup are found [HERE](https://docs.harvesterhci.io)
+  - The requirements and setup are found [Harvester Docs](https://docs.harvesterhci.io)
   - Plan your networking layout (I.E, if you're going to have logical vlans, build them now on your router / switching environment)
 - Create a bastion host on your Harvester cluster once online
   - If you logically separated your vlans, ensure it lives in the management vlan
 - Get your Harvester `kubeconfig` while logged in your bastion host
   - copy it to a save location
   - ensure you have `kubectl` and `fluxcli` installed
+
     ```sh
     # Install kubectl
     curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
@@ -42,7 +44,7 @@ Pre-Requisites:
 
 ### Install FluxCD
 
-There are quite a few ways to bootstrap FluxCD but I choose for my homelab to bootstrap it with `FluxCLI`. Ideally for production environments, IaC or some automated fashion through Github actions or Gitlab runners. 
+There are quite a few ways to bootstrap FluxCD but I choose for my homelab to bootstrap it with `FluxCLI`. Ideally for production environments, IaC or some automated fashion through Github actions or Gitlab runners.
 
 Bootstrap Setup for FluxCD on GitHub:
 
@@ -81,4 +83,4 @@ You should see a change on the original `gotk-components.yaml` while executing a
 
 ### Leverage SOPS
 
-Found [HERE](./sops-readme.md)
+Found [Leverage SOPs Readme](./sops-readme.md)

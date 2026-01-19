@@ -1,14 +1,17 @@
 # Install and configure SOPS for FluxCD with GPG
+
 SOPS is a great tool to encrypting your sensitive information while using GIT to store the encrypted data. In this setup, we will use GPG to fulfill this process. There are many other ways to do this with other secrets managers (Azure Key vault, Hashicorp Vault, AWS Secrets Manager, etc.).
 
 Reference:
 [FluxCD with SOPS](https://fluxcd.io/flux/guides/mozilla-sops/)
 
 ## Pre-requisites
+
 - A Kubernetes cluster
 - FluxCD already bootstrapped
 
 ## Install SOPS & GnuPG on Workstation or Bastionhost
+
 ```bash
 # Debian Builds
 sudo apt update
@@ -26,6 +29,7 @@ sudo chmod +x /usr/local/bin/sops
 ```
 
 ## Generate a GPG Key for SOPS
+
 - Note, you need to ensure there is no passphrase as FluxCD can't leverage passwords itself. Refer to the `Reference` link.
 
 ```bash
@@ -67,11 +71,13 @@ kubectl create secret generic sops-gpg \
 ```
 
 Backup your Key elsewhere within a password manager or encrypted storage.
+
 ```bash
 gpg --export-secret-keys --armor "$KEY_FP" > sops-gpg-backup.asc
 ```
 
-Now you can safely remove this GPG key from your BastionHost or Workstation. But, you can't "decrypt" secrets anymore if you remove the private key from your BastionHost or Workstation.  The public key is sufficient enough to encrypt because the private key lives within the Kubernetes cluster within the `flux-system` namespace. 
+Now you can safely remove this GPG key from your BastionHost or Workstation. But, you can't "decrypt" secrets anymore if you remove the private key from your BastionHost or Workstation.  The public key is sufficient enough to encrypt because the private key lives within the Kubernetes cluster within the `flux-system` namespace.
+
 ```bash
 # removes private key
 gpg --delete-secret-keys "$KEY_FP"
@@ -79,12 +85,14 @@ gpg --delete-secret-keys "$KEY_FP"
 ```
 
 If you ever needed to re-import the secret key, here's how to do this below.
+
 ```bash
 gpg --import sops-gpg-backup.asc
 ```
 
 
 ## Configure your .sops.yaml file
+
 For this setup, we will keep things simple and ask that you just put this new file at the root location of your `cluster/<clustername>/.sops.yaml`. Because I want this to cover everything, I did it the lazy way to ensure I don't have surprises later on. Basically these `creation_rules` covers every folder. Even though it's `lazy`, it covers my basis incase I forget a repo (which wouldn't be good).
 
 ```yaml
@@ -99,6 +107,7 @@ creation_rules:
 ```
 
 Add the following lines for kustomize which refers to a folder path.
+
 ```yaml
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
@@ -121,6 +130,7 @@ spec:
 ```
 
 ## Sample Secret
+
 IMPORTANT: If using `stringData`, the MACS will change because FluxCD will interpret this and convert to `data` field.  Ideally, use base64 encoded value (key=value) within your Kubernetes secret within the `data` and then encrypt before commiting your code.
 
 ```yaml
@@ -133,8 +143,9 @@ type: Opaque
 data:
     password: <your-base64-encoded-secret>
 ```
+
 Once the file is ready, simply execute the following:
+
 ```bash
 sops -e --in-place <path>/sample-secret.sops.yaml 
 ```
-
