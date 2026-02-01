@@ -1,6 +1,8 @@
 mode:
   standalone:
     enabled: true
+  distributed:
+    enabled: false
 
 replicaCount: 1
 
@@ -19,13 +21,17 @@ resources:
     cpu: "2"
     memory: "4Gi"
 
+storageclass:
+  name: "harvester-csi"
+  logStorageSize: "2Gi"
+  dataStorageSize: "30Gi"
+
 persistence:
   enabled: true
   size: 100Gi
 
 service:
   type: ClusterIP
-  port: 9000
 
 ingress:
   enabled: true
