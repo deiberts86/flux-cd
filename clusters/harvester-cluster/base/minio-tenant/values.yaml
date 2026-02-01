@@ -7,7 +7,7 @@ tenant:
 
   poolsMetadata:
     labels: 
-      harvester-minio: true
+      harvester-minio: "true"
 
   pools:
   - servers: 1
@@ -23,7 +23,10 @@ ingress:
       minio-tenant: harvester
     annotations:
       cert-manager.io/cluster-issuer: homelab-ca
-    tls: []
+    tls:
+      - hosts:
+          - minio.homelab
+        secretName: minio-console-tls
     host: minio.homelab
     path: /
     pathType: Prefix
