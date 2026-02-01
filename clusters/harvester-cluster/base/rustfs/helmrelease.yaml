@@ -29,3 +29,17 @@ spec:
     - kind: ConfigMap
       name: rustfs-values
       valuesKey: values.yaml
+
+  postRenderers:
+    - kustomize:
+        patches:
+          - target:
+              group: traefik.io
+              version: v1alpha1
+              kind: TraefikService
+            patch: |
+              apiVersion: traefik.io/v1alpha1
+              kind: TraefikService
+              metadata:
+                name: rustfs-sticky-svc
+              $patch: delete

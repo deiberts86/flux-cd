@@ -55,5 +55,5 @@ ingress:
       enabled: true
 
 gatewayApi:
-  enabled: false # Doesn't really seem to work
+  enabled: false # Doesn't really seem to work (https://github.com/rustfs/rustfs/pull/1679)
   gatewayClass: "nginx" # Must set because it will try to leverage Traefik by default (bug)
