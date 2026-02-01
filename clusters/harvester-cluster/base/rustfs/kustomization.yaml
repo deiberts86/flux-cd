@@ -11,3 +11,4 @@ configMapGenerator:
 resources:
 - helmrelease.yaml
 - namespace.yaml
+- rustfs-credentials-secret.sops.yaml
