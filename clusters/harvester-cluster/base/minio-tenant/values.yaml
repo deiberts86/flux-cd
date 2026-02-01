@@ -1,6 +1,9 @@
 tenant:
   name: harvester-minio
 
+  configuration:
+    name: minio-tenant-secret
+
   configSecret:
     existingSecret: true
     name: minio-tenant-secret
