@@ -12,7 +12,7 @@ spec:
       version: 7.1.1
       sourceRef:
         kind: HelmRepository
-        name: *app
+        name: minio-operator
         namespace: flux-system
       interval: 10m
   install:
