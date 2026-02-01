@@ -53,3 +53,7 @@ ingress:
     enabled: true
     certManager:
       enabled: true
+
+gatewayApi:
+  enabled: false # Doesn't really seem to work
+  gatewayClass: "nginx" # Must set because it will try to leverage Traefik by default (bug)
