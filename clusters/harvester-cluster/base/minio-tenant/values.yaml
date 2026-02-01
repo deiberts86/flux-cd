@@ -6,7 +6,8 @@ tenant:
     name: minio-tenant-secret
 
   poolsMetadata:
-    labels: harvester-minio
+    labels: 
+      harvester-minio: true
 
   pools:
   - servers: 1
