@@ -1,0 +1,28 @@
+tenant:
+  name: harvester-minio
+
+  configSecret:
+    existingSecret: true
+    name: minio-tenant-secret
+
+  poolsMetadata:
+    labels: harvester-minio
+
+  pools:
+  - servers: 1
+    name: pool-0
+    volumesPerServer: 1
+    size: 20Gi
+
+ingress:
+  console:
+    enabled: true
+    ingressClassName: "nginx"
+    labels:
+      minio-tenant: harvester
+    annotations:
+      cert-manager.io/cluster-issuer: homelab-ca
+    tls: []
+    host: minio.homelab
+    path: /
+    pathType: Prefix

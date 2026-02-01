@@ -5,4 +5,5 @@ resources:
 - harbor
 - homepage
 - minio-operator
+- minio-tenant
 - nebula-sync
