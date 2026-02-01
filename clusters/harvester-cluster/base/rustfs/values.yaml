@@ -11,7 +11,7 @@ image:
   tag: "latest"
 
 secret:
-  existingSecret: rustfs-credentials-secret
+  existingSecret: rustfs-credentials
 
 resources:
   requests:
