@@ -1,0 +1,49 @@
+mode:
+  standalone:
+    enabled: true
+
+replicaCount: 1
+
+image:
+  repository: rustfs/rustfs
+  tag: "latest"
+
+secret:
+  existingSecret: rustfs-credentials-secret
+
+resources:
+  requests:
+    cpu: "500m"
+    memory: "1Gi"
+  limits:
+    cpu: "2"
+    memory: "4Gi"
+
+persistence:
+  enabled: true
+  size: 100Gi
+
+service:
+  type: ClusterIP
+  port: 9000
+
+ingress:
+  enabled: true
+  className: "nginx"
+  nginxAnnotations:
+    nginx.ingress.kubernetes.io/affinity: "cookie"
+    nginx.ingress.kubernetes.io/session-cookie-name: "rustfs"
+    nginx.ingress.kubernetes.io/session-cookie-expires: "3600"
+    nginx.ingress.kubernetes.io/session-cookie-max-age: "3600"
+    nginx.ingress.kubernetes.io/session-cookie-hash: "sha1"
+  customAnnotations:
+    cert-manager.io/cluster-issuer: "homelab-ca"
+  hosts:
+    - host: rustfs.homelab
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+    enabled: true
+    certManager:
+      enabled: true

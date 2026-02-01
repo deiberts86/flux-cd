@@ -4,6 +4,5 @@ resources:
 - cert-manager
 - harbor
 - homepage
-- minio-operator
-- minio-tenant
 - nebula-sync
+- rustfs

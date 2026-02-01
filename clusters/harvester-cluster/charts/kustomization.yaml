@@ -4,4 +4,4 @@ resources:
 - cert-manager.yaml
 - harbor.yaml
 - homepage.yaml
-- minio-operator.yaml
+- rustfs.yaml

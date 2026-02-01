@@ -1,15 +1,15 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: &app minio-operator
+  name: &app rustfs
   namespace: *app
 spec:
   interval: 10m
   releaseName: *app
   chart:
     spec:
-      chart: operator
-      version: 7.1.1
+      chart: *app
+      version: "0.0.82"
       sourceRef:
         kind: HelmRepository
         name: *app
@@ -19,24 +19,13 @@ spec:
     createNamespace: false
     remediation:
       retries: 3
-    crds: Create
   upgrade:
     remediation:
       retries: 3
-    crds: CreateReplace
   rollback:
     timeout: 15m
     disableWait: false
-  values:
-    operator:
-      env:
-      - name: OPERATOR_STS_ENABLED
-        value: "on"
-      replicaCount: 1
-      resources:
-        requests:
-          cpu: 100m
-          memory: 256Mi
-        limits:
-          cpu: 500m
-          memory: 512Mi
+  valuesFrom:
+    - kind: ConfigMap
+      name: rustfs-values
+      valuesKey: values.yaml
