@@ -27,3 +27,6 @@ spec:
   rollback:
     timeout: 15m
     disableWait: false
+  valuesFrom:
+  - kind: ConfigMap
+    name: minio-tenant-values
