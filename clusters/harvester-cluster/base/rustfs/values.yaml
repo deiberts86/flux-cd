@@ -17,9 +17,6 @@ config:
 
 secret:
   existingSecret: rustfs-credentials
-  rustfs:
-    access_key: ""
-    secret_key: ""
 
 resources:
   requests:

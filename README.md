@@ -13,12 +13,12 @@ The concept to pair Harvester with FluxCD is to control components on Harvester 
   - FluxCD
   - Harbor with Proxy-Cache
   - Homepage
-  - Minio-Operator
+  - RustFS (S3 ObjectStorage)
   - Nebula-Sync (for Pihole)
 
 - FUTURE plans:
+  - Vault
   - Keycloak-X
-  - Object Storage with MinIO
   - Virtual Routers (KubeOVN | More to come on this)
   - Gitlab or Gitea
 

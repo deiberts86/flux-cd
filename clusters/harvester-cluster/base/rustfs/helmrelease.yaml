@@ -30,6 +30,7 @@ spec:
       name: rustfs-values
       valuesKey: values.yaml
 
+# Required to prevent traefik svc creation (bug ref on values.yaml)
   postRenderers:
     - kustomize:
         patches:
