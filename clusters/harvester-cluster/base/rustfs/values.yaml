@@ -7,11 +7,15 @@ mode:
 replicaCount: 1
 
 image:
-  repository: rustfs/rustfs
+  repository: harbor.homelab/docker-proxy-cache/rustfs/rustfs
+  pullPolicy: IfNotPresent
   tag: "latest"
 
 secret:
   existingSecret: rustfs-credentials
+  rustfs:
+    access_key: ""
+    secret_key: ""
 
 resources:
   requests:
