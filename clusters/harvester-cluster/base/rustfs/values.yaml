@@ -11,6 +11,10 @@ image:
   pullPolicy: IfNotPresent
   tag: "latest"
 
+config:
+  rustfs:
+    domains: "homelab"
+
 secret:
   existingSecret: rustfs-credentials
   rustfs:
