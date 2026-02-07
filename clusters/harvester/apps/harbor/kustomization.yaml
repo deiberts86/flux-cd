@@ -10,4 +10,5 @@ configMapGenerator:
   - values.yaml
 resources:
 - helmrelease.yaml
+- harbor-admin-secret.yaml
 - namespace.yaml
