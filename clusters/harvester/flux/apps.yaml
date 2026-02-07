@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m
-  path: ./clusters/harvester-cluster/apps
+  path: ./clusters/harvester/apps
   prune: true
   timeout: 5m
   sourceRef:
