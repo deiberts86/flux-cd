@@ -1,0 +1,20 @@
+hostname: rancher.homelab
+
+systemDefaultRegistry: harbor.homelab/docker-proxy-cache
+
+service.disableHTTP: true
+
+ingress:
+  enabled: true
+  includeDefaultExtraAnnotations: true
+  extraAnnotations:
+    cert-manager.io/cluster-issuer: homelab-ca
+  ingressClassName: "traefik"
+  pathType: ImplementationSpecific
+  path: "/"
+  # Must use 443 when `service.disableHTTP` is set to true.
+  servicePort: 443
+  tls:
+    # options: rancher, letsEncrypt, secret
+    source: rancher
+    secretName: rancher-tls
