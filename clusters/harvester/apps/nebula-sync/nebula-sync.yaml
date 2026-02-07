@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: nebula-sync
-          image: ghcr.io/lovelaze/nebula-sync:v0.11.1
+          image: harbor.homelab/ghcr-proxy-cache/lovelaze/nebula-sync:v0.11.1
           resources:
             requests:
               cpu: 20m
