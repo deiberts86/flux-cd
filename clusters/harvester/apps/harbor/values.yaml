@@ -20,10 +20,10 @@ persistence:
   enabled: true
   persistentVolumeClaim:
     database:
-      storageclass: "harvester-csi-retain"
+      storageClass: "harvester-csi-retain"
       size: 5Gi
     registry:
-      storageclass: "harvester-csi-retain"
+      storageClass: "harvester-csi-retain"
       size: 30Gi
 
 metrics:
