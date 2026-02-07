@@ -1,5 +1,9 @@
 externalURL: https://harbor.homelab
 
+existingSecretAdminPassword: "harbor-admin-secret" # Your Secret Name
+existingSecretAdminPasswordKey: HARBOR_ADMIN_PASSWORD # Key From Secret
+harborAdminPassword: ""
+
 expose:
   tls:
     certSource: secret
@@ -11,9 +15,16 @@ expose:
     annotations:
       cert-manager.io/cluster-issuer: homelab-ca
 
+# Check to ensure you're using a storageClass with "retain" policy
 persistence:
+  enabled: true
   persistentVolumeClaim:
     database:
+      storageclass: harvester-csi-retain
       size: 5Gi
     registry:
+      storageclass: harvester-csi-retain
       size: 30Gi
+
+metrics:
+  enabled: true

@@ -26,8 +26,9 @@ resources:
     cpu: "2"
     memory: "4Gi"
 
+# Check to ensure you're using a storageClass with "retain" policy
 storageclass:
-  name: "harvester-csi"
+  name: "harvester-csi-retain"
   logStorageSize: "2Gi"
   dataStorageSize: "30Gi"
 
