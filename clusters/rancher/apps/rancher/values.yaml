@@ -23,7 +23,7 @@ ingress:
     secretName: rancher-tls
 
 # Agent TLS Mode ('strict' or 'system-store')
-agentTLSMode: "system-store"
+agentTLSMode: "strict"
 
 # Don't use a private CA cert for homelab
 privateCA: false
