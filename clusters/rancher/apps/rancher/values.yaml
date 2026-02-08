@@ -21,3 +21,9 @@ ingress:
   tls:
     source: secret
     secretName: rancher-tls
+
+# Set agent mode to not use strict TLS for homelab
+agentTLSMode: "system-store"
+
+# Don't use a private CA cert for homelab
+privateCA: false
