@@ -3,7 +3,7 @@ hostname: rancher.homelab
 systemDefaultRegistry: harbor.homelab/docker-proxy-cache
 
 service:
-  disableHTTP: true
+  disableHTTP: false
 
 ingress:
   enabled: true
