@@ -7,7 +7,7 @@ service:
 
 ingress:
   enabled: true
-  includeDefaultExtraAnnotations: true
+  includeDefaultExtraAnnotations: false
   # extraAnnotations:
   #   cert-manager.io/cluster-issuer: homelab-ca
   #   cert-manager.io/common-name: rancher.homelab
