@@ -2,7 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: &app rancher
-  namespace: *app
+  namespace: cattle-system
 spec:
   interval: 10m
   releaseName: *app
