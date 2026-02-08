@@ -15,7 +15,9 @@ ingress:
 
   pathType: ImplementationSpecific
   path: "/"
-  servicePort: 443
+
+  # If setting service.disableHTTP=true, set ingress.servicePort=80
+  servicePort: 80
   tls:
     source: secret
     secretName: rancher-tls
