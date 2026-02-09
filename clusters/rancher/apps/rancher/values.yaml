@@ -7,23 +7,7 @@ service:
 
 ingress:
   enabled: true
-  includeDefaultExtraAnnotations: true
-  # extraAnnotations:
-  #   cert-manager.io/cluster-issuer: homelab-ca
-  #   cert-manager.io/common-name: rancher.homelab
   ingressClassName: "traefik"
-
-  pathType: ImplementationSpecific
-  path: "/"
-
-  # If setting service.disableHTTP=true, set ingress.servicePort=80
-  servicePort: 80
-  tls:
-    source: secret
-    secretName: tls-rancher
 
 # Agent TLS Mode ('strict' or 'system-store')
 agentTLSMode: "strict"
-
-# Don't use a private CA cert for homelab
-privateCA: false
