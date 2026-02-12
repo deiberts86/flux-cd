@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: *app
-      version: "0.0.82"
+      version: "0.0.83"
       sourceRef:
         kind: HelmRepository
         name: *app
@@ -29,18 +29,3 @@ spec:
     - kind: ConfigMap
       name: rustfs-values
       valuesKey: values.yaml
-
-# Required to prevent traefik svc creation (bug ref on values.yaml)
-  postRenderers:
-    - kustomize:
-        patches:
-          - target:
-              group: traefik.io
-              version: v1alpha1
-              kind: TraefikService
-            patch: |
-              apiVersion: traefik.io/v1alpha1
-              kind: TraefikService
-              metadata:
-                name: rustfs-sticky-svc
-              $patch: delete

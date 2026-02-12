@@ -9,7 +9,7 @@ replicaCount: 1
 image:
   repository: harbor.homelab/docker-proxy-cache/rustfs/rustfs
   pullPolicy: IfNotPresent
-  tag: "1.0.0-alpha.82"
+  tag: "1.0.0-alpha.83"
 
 config:
   rustfs:
@@ -61,5 +61,4 @@ ingress:
       enabled: true
 
 gatewayApi:
-  enabled: false # Doesn't really seem to work (https://github.com/rustfs/rustfs/pull/1679)
-  gatewayClass: "nginx" # Must set because it will try to leverage Traefik by default (bug)
+  enabled: false
