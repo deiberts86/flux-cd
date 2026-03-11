@@ -9,7 +9,7 @@ replicaCount: 1
 image:
   repository: harbor.homelab/docker-proxy-cache/rustfs/rustfs
   pullPolicy: IfNotPresent
-  tag: "1.0.0-alpha.83"
+  tag: "1.0.0-alpha.85"
 
 config:
   rustfs:
