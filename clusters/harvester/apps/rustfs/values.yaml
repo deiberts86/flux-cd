@@ -7,9 +7,9 @@ mode:
 replicaCount: 1
 
 image:
-  repository: harbor.homelab/docker-proxy-cache/rustfs/rustfs
+  repository: rustfs/rustfs
   pullPolicy: IfNotPresent
-  tag: "1.0.0-alpha.85"
+  tag: "1.0.0-alpha.89"
 
 config:
   rustfs:
@@ -51,10 +51,10 @@ ingress:
   customAnnotations:
     cert-manager.io/cluster-issuer: "homelab-ca"
   hosts:
-    - host: rustfs.homelab
-      paths:
-        - path: /
-          pathType: Prefix
+  - host: rustfs.homelab
+    paths:
+    - path: /
+      pathType: Prefix
   tls:
     enabled: true
     certManager:
