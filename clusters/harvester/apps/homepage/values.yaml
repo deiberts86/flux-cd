@@ -1,6 +1,5 @@
 image:
     repository: gethomepage/homepage
-    tag: v1.11.0
 
 serviceAccount:
     create: true

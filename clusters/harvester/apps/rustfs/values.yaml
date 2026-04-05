@@ -9,7 +9,6 @@ replicaCount: 1
 image:
   repository: rustfs/rustfs
   pullPolicy: IfNotPresent
-  tag: "1.0.0-alpha.89"
 
 config:
   rustfs:
