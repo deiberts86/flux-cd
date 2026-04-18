@@ -12,7 +12,10 @@ image:
 
 config:
   rustfs:
+    log_level: "info"
+    rust_log: "info"
     domains: "homelab"
+    region: "us-east-1"
 
 secret:
   existingSecret: rustfs-credentials

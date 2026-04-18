@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: *app
-      version: "0.0.90"
+      version: "0.0.94"
       sourceRef:
         kind: HelmRepository
         name: *app
@@ -26,6 +26,6 @@ spec:
     timeout: 15m
     disableWait: false
   valuesFrom:
-    - kind: ConfigMap
-      name: rustfs-values
-      valuesKey: values.yaml
+  - kind: ConfigMap
+    name: rustfs-values
+    valuesKey: values.yaml
