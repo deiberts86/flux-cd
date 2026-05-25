@@ -9,6 +9,7 @@ replicaCount: 1
 image:
   repository: rustfs/rustfs
   pullPolicy: IfNotPresent
+  tag: ""
 
 config:
   rustfs:
